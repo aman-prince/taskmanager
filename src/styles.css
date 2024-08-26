@@ -1,0 +1,159 @@
+/* src/styles.css */
+:root {
+  --primary-color: #1c8038;
+  --secondary-color: #ffffff;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --task-background: #ffffff;
+  --task-border: #ddd;
+  --header-bg-color: #1c8038;
+  --header-text-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --primary-color: #ffffff;
+  --secondary-color: #1c8038;
+  --text-color: #f5f5f5;
+  --background-color: #222;
+  --task-background: #333;
+  --task-border: #555;
+  --header-bg-color: #222;
+  --header-text-color: #f5f5f5;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid var(--task-border);
+  border-radius: 4px;
+  width: 300px;
+  margin-right: 10px;
+  background-color: var(--task-background);
+  color: var(--text-color);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.task {
+  background-color: var(--task-background);
+  border: 1px solid var(--task-border);
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-theme {
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.toggle-theme:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.congrats-message {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.task-stats {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(--task-background);
+  border: 1px solid var(--task-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.task-stats p {
+  margin: 10px 0;
+  color: var(--text-color);
+  font-weight: bold;
+}
